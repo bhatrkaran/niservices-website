@@ -61,7 +61,7 @@ var testimonials = [
 ];
 
 var statsList = [
-  { num: "15+", label: "Years Experience" },
+  { num: "30+", label: "Years Experience" },
   { num: "500+", label: "Projects Completed" },
   { num: "200+", label: "Happy Clients" },
   { num: "4", label: "Cutting Services" },
