@@ -156,7 +156,6 @@ function HomePage(props) {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(circle at 50% 0%, rgba(212,43,43,0.08) 0%, transparent 60%)" }} />
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 60px)", backgroundSize: "60px 60px" }} />
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ marginBottom: 20 }}><NISLogo size={72} /></div>
           <div style={{ display: "inline-block", background: "rgba(212,43,43,0.1)", color: RED, padding: "6px 18px", borderRadius: 20, fontSize: 12, fontWeight: 600, marginBottom: 16, border: "1px solid rgba(212,43,43,0.2)" }}>Belagavi's Trusted Steel Partner</div>
           <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 900, color: "#fff", lineHeight: 1.2, margin: "0 0 16px" }}>Quality Steel Supply &<br /><span style={{ color: RED }}>Industrial Fabrication</span></h1>
           <p style={{ color: TEXTSUB, fontSize: 16, maxWidth: 600, margin: "0 auto 30px", lineHeight: 1.6 }}>MS Plates, Rounds, Structurals and Expert Cutting Services - Oxyfuel, Plasma and Custom Fabrication for every industrial need.</p>
