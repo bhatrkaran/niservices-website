@@ -35,23 +35,22 @@ function Icon(props) {
     zap: <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke={c} strokeWidth="1.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
     truck: <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke={c} strokeWidth="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
     clock: <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke={c} strokeWidth="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-    steel: <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke={c} strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>,
   };
   return icons[type] || null;
 }
 
 var products = [
-  { name: "MS Plates", desc: "Mild Steel plates in various thicknesses (5mm to 100mm). IS 2062 Grade. Custom sizes available.", sizes: "1250x2500mm, 1500x3000mm, custom" },
-  { name: "MS Rounds", desc: "Round bars for construction, fabrication and machining. All standard diameters available.", sizes: "10mm to 300mm dia" },
-  { name: "Structural Steel", desc: "I-Beams, H-Beams, Channels, Angles and Joists for construction and industrial use.", sizes: "ISMB, ISMC, ISA - all standard" },
-  { name: "Structural Plates", desc: "Heavy-duty plates for structural applications. High tensile and boiler quality available.", sizes: "6mm to 120mm, custom cut" },
+  { name: "MS Plates", desc: "Mild Steel plates in various thicknesses (5mm to 100mm). IS 2062 Grade. Custom sizes available.", sizes: "1250x2500mm, 1500x3000mm, custom", img: "/ms-plates.jpg" },
+  { name: "MS Rounds", desc: "Round bars for construction, fabrication and machining. All standard diameters available.", sizes: "10mm to 300mm dia", img: "/round-discs.jpg" },
+  { name: "Structural Steel", desc: "I-Beams, H-Beams, Channels, Angles and Joists for construction and industrial use.", sizes: "ISMB, ISMC, ISA - all standard", img: "/precision-cutting.jpg" },
+  { name: "Structural Plates", desc: "Heavy-duty plates for structural applications. High tensile and boiler quality available.", sizes: "6mm to 120mm, custom cut", img: "/ms-rounds.jpg" },
 ];
 
 var services = [
-  { name: "Industrial Fabrication", desc: "Custom steel fabrication for industrial structures, frames, platforms, and heavy equipment components. End-to-end project execution." },
-  { name: "Oxyfuel Cutting", desc: "Precision oxy-acetylene cutting for thick MS plates and structural steel. Ideal for heavy sections up to 300mm." },
-  { name: "Plasma Cutting", desc: "High-precision CNC and manual plasma cutting for intricate profiles, cleaner edges, and faster turnaround." },
-  { name: "Sheet Steel Fabrication", desc: "Bending, rolling, welding, and finishing of sheet steel for enclosures, ducts, hoppers, and custom assemblies." },
+  { name: "Industrial Fabrication", desc: "Custom steel fabrication for industrial structures, frames, platforms, and heavy equipment components. End-to-end project execution.", img: "/precision-cutting.jpg" },
+  { name: "Oxyfuel Cutting", desc: "Precision oxy-acetylene cutting for thick MS plates and structural steel. Ideal for heavy sections up to 300mm.", img: "/oxyfuel-cutting.jpg" },
+  { name: "Plasma Cutting", desc: "High-precision CNC and manual plasma cutting for intricate profiles, cleaner edges, and faster turnaround.", img: "/plasma-cutting.jpg" },
+  { name: "Sheet Steel Fabrication", desc: "Bending, rolling, welding, and finishing of sheet steel for enclosures, ducts, hoppers, and custom assemblies.", img: "/ms-rounds.jpg" },
 ];
 
 var testimonials = [
@@ -152,20 +151,22 @@ function WhatsAppFab() {
 function HomePage(props) {
   return (
     <div>
-      <section style={{ background: "linear-gradient(135deg, " + DARKER + " 0%, " + DARK + " 40%, #1f1215 100%)", padding: "60px 20px 50px", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(circle at 50% 0%, rgba(212,43,43,0.08) 0%, transparent 60%)" }} />
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 60px)", backgroundSize: "60px 60px" }} />
+      {/* Hero with background image */}
+      <section style={{ position: "relative", padding: "80px 20px 70px", textAlign: "center", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "url(/plasma-cutting.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "linear-gradient(135deg, rgba(19,21,26,0.92) 0%, rgba(26,29,35,0.88) 40%, rgba(30,15,15,0.9) 100%)" }} />
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ display: "inline-block", background: "rgba(212,43,43,0.1)", color: RED, padding: "6px 18px", borderRadius: 20, fontSize: 12, fontWeight: 600, marginBottom: 16, border: "1px solid rgba(212,43,43,0.2)" }}>Belagavi's Trusted Steel Partner</div>
+          <div style={{ display: "inline-block", background: "rgba(212,43,43,0.15)", color: RED, padding: "6px 18px", borderRadius: 20, fontSize: 12, fontWeight: 600, marginBottom: 16, border: "1px solid rgba(212,43,43,0.25)" }}>Belagavi's Trusted Steel Partner</div>
           <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 900, color: "#fff", lineHeight: 1.2, margin: "0 0 16px" }}>Quality Steel Supply &<br /><span style={{ color: RED }}>Industrial Fabrication</span></h1>
-          <p style={{ color: TEXTSUB, fontSize: 16, maxWidth: 600, margin: "0 auto 30px", lineHeight: 1.6 }}>MS Plates, Rounds, Structurals and Expert Cutting Services - Oxyfuel, Plasma and Custom Fabrication for every industrial need.</p>
+          <p style={{ color: "#ccc", fontSize: 16, maxWidth: 600, margin: "0 auto 30px", lineHeight: 1.6 }}>MS Plates, Rounds, Structurals and Expert Cutting Services - Oxyfuel, Plasma and Custom Fabrication for every industrial need.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={WA("Hi, I would like to get a quote for steel products.")} target="_blank" rel="noopener noreferrer" style={{ background: "#25D366", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 700, fontSize: 15, textDecoration: "none" }}>Get Quote on WhatsApp</a>
-            <button onClick={function() { props.navigate("Products"); }} style={{ background: "transparent", color: RED, padding: "14px 28px", borderRadius: 8, fontWeight: 700, fontSize: 15, border: "2px solid " + RED, cursor: "pointer" }}>View Products</button>
+            <button onClick={function() { props.navigate("Products"); }} style={{ background: "rgba(255,255,255,0.1)", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 700, fontSize: 15, border: "2px solid rgba(255,255,255,0.3)", cursor: "pointer", backdropFilter: "blur(4px)" }}>View Products</button>
           </div>
         </div>
       </section>
 
+      {/* Stats */}
       <section style={{ background: RED, padding: "0 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
           {statsList.map(function(s, i) {
@@ -179,6 +180,7 @@ function HomePage(props) {
         </div>
       </section>
 
+      {/* Why Choose Us */}
       <section style={{ background: DARK, padding: "50px 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2 style={{ textAlign: "center", color: "#fff", fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Why Choose Us?</h2>
@@ -202,6 +204,7 @@ function HomePage(props) {
         </div>
       </section>
 
+      {/* Products with photos */}
       <section style={{ background: DARKER, padding: "50px 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2 style={{ textAlign: "center", color: "#fff", fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Our Products</h2>
@@ -209,14 +212,16 @@ function HomePage(props) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {products.map(function(p, i) {
               return (
-                <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, padding: 24 }}>
-                  <div style={{ width: 48, height: 48, background: "rgba(212,43,43,0.1)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14, border: "1px solid rgba(212,43,43,0.15)" }}>
-                    <Icon type="steel" />
+                <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, overflow: "hidden" }}>
+                  <div style={{ width: "100%", height: 180, overflow: "hidden" }}>
+                    <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
-                  <h3 style={{ color: RED, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{p.name}</h3>
-                  <p style={{ color: TEXTSUB, fontSize: 13, lineHeight: 1.5, marginBottom: 8 }}>{p.desc}</p>
-                  <div style={{ color: TEXTMUTED, fontSize: 12, marginBottom: 16 }}>Sizes: {p.sizes}</div>
-                  <button onClick={function() { window.open(WA("Hi, I am interested in " + p.name + ". Please share pricing and availability."), "_blank"); }} style={{ background: "#25D366", color: "#fff", border: "none", padding: "10px 20px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer", width: "100%" }}>Enquire on WhatsApp</button>
+                  <div style={{ padding: "20px" }}>
+                    <h3 style={{ color: RED, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{p.name}</h3>
+                    <p style={{ color: TEXTSUB, fontSize: 13, lineHeight: 1.5, marginBottom: 8 }}>{p.desc}</p>
+                    <div style={{ color: TEXTMUTED, fontSize: 12, marginBottom: 16 }}>Sizes: {p.sizes}</div>
+                    <button onClick={function() { window.open(WA("Hi, I am interested in " + p.name + ". Please share pricing and availability."), "_blank"); }} style={{ background: "#25D366", color: "#fff", border: "none", padding: "10px 20px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer", width: "100%" }}>Enquire on WhatsApp</button>
+                  </div>
                 </div>
               );
             })}
@@ -227,6 +232,7 @@ function HomePage(props) {
         </div>
       </section>
 
+      {/* Testimonials */}
       <section style={{ background: DARK, padding: "50px 20px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2 style={{ textAlign: "center", color: "#fff", fontSize: 28, fontWeight: 800, marginBottom: 40 }}>What Our Clients Say</h2>
@@ -245,12 +251,17 @@ function HomePage(props) {
         </div>
       </section>
 
-      <section style={{ background: "linear-gradient(135deg, " + RED + " 0%, #991b1b 100%)", padding: "50px 20px", textAlign: "center" }}>
-        <h2 style={{ color: "#fff", fontSize: 28, fontWeight: 900, marginBottom: 12 }}>Ready to Get Started?</h2>
-        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, marginBottom: 24 }}>Get an instant quote on WhatsApp or call us directly</p>
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href={WA("Hi, I would like to get a quote.")} target="_blank" rel="noopener noreferrer" style={{ background: "#25D366", color: "#fff", padding: "14px 30px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15 }}>WhatsApp Us</a>
-          <a href={TEL} style={{ background: "#fff", color: RED, padding: "14px 30px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15 }}>Call +91 89046 08193</a>
+      {/* CTA with background image */}
+      <section style={{ position: "relative", padding: "60px 20px", textAlign: "center", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "url(/oxyfuel-cutting.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "linear-gradient(135deg, rgba(185,28,28,0.9) 0%, rgba(153,27,27,0.92) 100%)" }} />
+        <div style={{ position: "relative" }}>
+          <h2 style={{ color: "#fff", fontSize: 28, fontWeight: 900, marginBottom: 12 }}>Ready to Get Started?</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, marginBottom: 24 }}>Get an instant quote on WhatsApp or call us directly</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href={WA("Hi, I would like to get a quote.")} target="_blank" rel="noopener noreferrer" style={{ background: "#25D366", color: "#fff", padding: "14px 30px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15 }}>WhatsApp Us</a>
+            <a href={TEL} style={{ background: "#fff", color: RED, padding: "14px 30px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15 }}>Call +91 89046 08193</a>
+          </div>
         </div>
       </section>
     </div>
@@ -266,18 +277,20 @@ function ProductsPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
           {products.map(function(p, i) {
             return (
-              <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, padding: 28 }}>
-                <div style={{ width: 56, height: 56, background: "rgba(212,43,43,0.1)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, border: "1px solid rgba(212,43,43,0.15)" }}>
-                  <Icon type="steel" />
+              <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ width: "100%", height: 200, overflow: "hidden" }}>
+                  <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
-                <h2 style={{ color: RED, fontSize: 22, fontWeight: 800, marginBottom: 10 }}>{p.name}</h2>
-                <p style={{ color: TEXTSUB, fontSize: 14, lineHeight: 1.6, marginBottom: 12 }}>{p.desc}</p>
-                <div style={{ background: DARK, borderRadius: 8, padding: "10px 14px", marginBottom: 20, fontSize: 13, color: TEXTSUB }}>
-                  <strong style={{ color: RED }}>Sizes: </strong>{p.sizes}
-                </div>
-                <div style={{ display: "flex", gap: 8 }}>
-                  <button onClick={function() { window.open(WA("Hi, I am interested in " + p.name + ". Please share pricing and availability."), "_blank"); }} style={{ flex: 1, background: "#25D366", color: "#fff", border: "none", padding: "12px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer" }}>WhatsApp</button>
-                  <a href={TEL} style={{ flex: 1, background: RED, color: "#fff", padding: "12px", borderRadius: 6, fontWeight: 600, fontSize: 13, textDecoration: "none", textAlign: "center" }}>Call</a>
+                <div style={{ padding: "24px" }}>
+                  <h2 style={{ color: RED, fontSize: 22, fontWeight: 800, marginBottom: 10 }}>{p.name}</h2>
+                  <p style={{ color: TEXTSUB, fontSize: 14, lineHeight: 1.6, marginBottom: 12 }}>{p.desc}</p>
+                  <div style={{ background: DARK, borderRadius: 8, padding: "10px 14px", marginBottom: 20, fontSize: 13, color: TEXTSUB }}>
+                    <strong style={{ color: RED }}>Sizes: </strong>{p.sizes}
+                  </div>
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <button onClick={function() { window.open(WA("Hi, I am interested in " + p.name + ". Please share pricing and availability."), "_blank"); }} style={{ flex: 1, background: "#25D366", color: "#fff", border: "none", padding: "12px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer" }}>WhatsApp</button>
+                    <a href={TEL} style={{ flex: 1, background: RED, color: "#fff", padding: "12px", borderRadius: 6, fontWeight: 600, fontSize: 13, textDecoration: "none", textAlign: "center" }}>Call</a>
+                  </div>
                 </div>
               </div>
             );
@@ -296,10 +309,15 @@ function ServicesPage() {
         <p style={{ color: TEXTMUTED, marginBottom: 40, fontSize: 14 }}>End-to-end industrial fabrication and cutting solutions</p>
         {services.map(function(s, i) {
           return (
-            <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, padding: 28, marginBottom: 20 }}>
-              <h2 style={{ color: RED, fontSize: 22, fontWeight: 800, marginBottom: 10 }}>{s.name}</h2>
-              <p style={{ color: TEXTSUB, fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>{s.desc}</p>
-              <button onClick={function() { window.open(WA("Hi, I would like to enquire about your " + s.name + " service. Please share details."), "_blank"); }} style={{ background: "#25D366", color: "#fff", border: "none", padding: "12px 24px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer" }}>Enquire on WhatsApp</button>
+            <div key={i} style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, overflow: "hidden", marginBottom: 20, display: "flex", flexWrap: "wrap" }}>
+              <div style={{ width: 300, minHeight: 200, flexShrink: 0 }}>
+                <img src={s.img} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+              <div style={{ flex: 1, padding: "28px", minWidth: 280 }}>
+                <h2 style={{ color: RED, fontSize: 22, fontWeight: 800, marginBottom: 10 }}>{s.name}</h2>
+                <p style={{ color: TEXTSUB, fontSize: 14, lineHeight: 1.7, marginBottom: 16 }}>{s.desc}</p>
+                <button onClick={function() { window.open(WA("Hi, I would like to enquire about your " + s.name + " service. Please share details."), "_blank"); }} style={{ background: "#25D366", color: "#fff", border: "none", padding: "12px 24px", borderRadius: 6, fontWeight: 600, fontSize: 13, cursor: "pointer" }}>Enquire on WhatsApp</button>
+              </div>
             </div>
           );
         })}
@@ -314,26 +332,37 @@ function AboutPage() {
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <h1 style={{ color: "#fff", fontSize: 32, fontWeight: 900, marginBottom: 8 }}>About <span style={{ color: RED }}>Us</span></h1>
         <p style={{ color: TEXTMUTED, marginBottom: 30, fontSize: 14 }}>Your trusted steel partner in Belagavi</p>
-        <div style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, padding: 32 }}>
-          <div style={{ textAlign: "center", marginBottom: 24 }}><NISLogo size={64} /></div>
-          <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 20 }}>
-            <strong style={{ color: RED }}>National Industrial Services</strong> is a Belagavi-based steel supply and industrial fabrication company located in the heart of Udyambag's industrial belt. We specialize in supplying premium-grade MS Plates, MS Rounds, Structural Steel, and Structural Plates to construction firms, fabricators, and manufacturers across Karnataka and Goa.
-          </p>
-          <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 20 }}>
-            Our state-of-the-art cutting services - including Oxyfuel Cutting, Plasma Cutting, and Sheet Steel Fabrication - ensure precision and reliability for every project, from small-scale custom work to large industrial orders.
-          </p>
-          <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 30 }}>
-            With a commitment to quality, competitive pricing, and prompt delivery, we have built lasting relationships with hundreds of clients who trust us for their most critical projects.
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 16 }}>
-            {statsList.map(function(s, i) {
-              return (
-                <div key={i} style={{ background: DARK, borderRadius: 8, padding: 20, textAlign: "center", border: "1px solid " + BORDER }}>
-                  <div style={{ fontSize: 28, fontWeight: 900, color: RED }}>{s.num}</div>
-                  <div style={{ fontSize: 11, color: TEXTSUB, fontWeight: 600 }}>{s.label}</div>
-                </div>
-              );
-            })}
+        <div style={{ background: CARD, border: "1px solid " + BORDER, borderRadius: 12, overflow: "hidden" }}>
+          <div style={{ width: "100%", height: 250, overflow: "hidden" }}>
+            <img src="/plasma-cutting.jpg" alt="Our Workshop" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+          <div style={{ padding: 32 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+              <NISLogo size={48} />
+              <div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: TEXTMAIN, letterSpacing: 2 }}>NATIONAL</div>
+                <div style={{ fontSize: 10, color: TEXTSUB, letterSpacing: 4 }}>INDUSTRIAL SERVICES</div>
+              </div>
+            </div>
+            <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 20 }}>
+              <strong style={{ color: RED }}>National Industrial Services</strong> is a Belagavi-based steel supply and industrial fabrication company located in the heart of Udyambag's industrial belt. We specialize in supplying premium-grade MS Plates, MS Rounds, Structural Steel, and Structural Plates to construction firms, fabricators, and manufacturers across Karnataka and Goa.
+            </p>
+            <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 20 }}>
+              Our state-of-the-art cutting services - including Oxyfuel Cutting, Plasma Cutting, and Sheet Steel Fabrication - ensure precision and reliability for every project, from small-scale custom work to large industrial orders.
+            </p>
+            <p style={{ color: TEXTMAIN, fontSize: 15, lineHeight: 1.8, marginBottom: 30 }}>
+              With a commitment to quality, competitive pricing, and prompt delivery, we have built lasting relationships with hundreds of clients who trust us for their most critical projects.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 16 }}>
+              {statsList.map(function(s, i) {
+                return (
+                  <div key={i} style={{ background: DARK, borderRadius: 8, padding: 20, textAlign: "center", border: "1px solid " + BORDER }}>
+                    <div style={{ fontSize: 28, fontWeight: 900, color: RED }}>{s.num}</div>
+                    <div style={{ fontSize: 11, color: TEXTSUB, fontWeight: 600 }}>{s.label}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
